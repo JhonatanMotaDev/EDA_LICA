@@ -2,8 +2,6 @@
 
 Análise Exploratória de Dados da **Carga de Energia Elétrica Diária** dos subsistemas brasileiros, utilizando dados públicos do **Operador Nacional do Sistema Elétrico (ONS)**.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JhonatanMotaDev/EDA_LICA/blob/main/EDA_LICA2.ipynb)
-
 ---
 
 ## Objetivo
@@ -24,7 +22,7 @@ O foco da análise está na identificação de:
 ## Dataset
 
 - **Fonte:** [Operador Nacional do Sistema Elétrico (ONS)](https://dados.ons.org.br/)
-- **Arquivo:** `CARGA_ENERGIA_2026.csv`
+- **Arquivo:** `data/raw/CARGA_ENERGIA_2026.csv`
 - **Período analisado:** 01/01/2026 a 10/05/2026 (130 dias por subsistema)
 - **Total de registros:** 520 (4 subsistemas × 130 dias)
 
@@ -56,20 +54,25 @@ O foco da análise está na identificação de:
 ```
 EDA_LICA/
 ├── data/
-│   ├── raw/              # Dados originais (não versionados)
-│   └── processed/        # Dados tratados
+│   ├── raw/
+│   │   └── CARGA_ENERGIA_2026.csv
+│   └── processed/
 ├── notebooks/
-│   └── EDA_LICA2.ipynb   # Notebook principal da análise
+│   └── notebook-eda-lica.ipynb
 ├── reports/
-│   └── figures/          # Gráficos exportados
+│   └── figures/
+│       ├── anomalias_deteccao.png
+│       ├── disparidade_subsistemas.png
+│       ├── multivariada_heatmap.png
+│       ├── temporal_carga_subsistema.png
+│       ├── temporal_perfil_semanal.png
+│       └── univariada_distribuicao.png
 ├── review/
-│   └── review.md         # Feedback técnico da análise
+│   └── review.md
 ├── README.md
 ├── requirements.txt
 └── .gitignore
 ```
-
-> **Nota:** O dataset não está incluído no repositório. Veja as instruções de execução abaixo para obtê-lo.
 
 ---
 
@@ -81,23 +84,11 @@ EDA_LICA/
 pip install -r requirements.txt
 ```
 
-### Obtendo os dados
-
-1. Acesse o portal de dados abertos do ONS: [https://dados.ons.org.br/](https://dados.ons.org.br/)
-2. Baixe o arquivo de **Carga de Energia Diária**
-3. Salve em `data/raw/CARGA_ENERGIA_2026.csv`
-
 ### Executando localmente
 
 ```bash
-jupyter notebook notebooks/EDA_LICA2.ipynb
+jupyter notebook notebooks/notebook-eda-lica.ipynb
 ```
-
-### Executando no Google Colab
-
-Clique no badge no topo deste README ou acesse o link direto do notebook.
-
-> Ao usar o Colab, ajuste o caminho do arquivo no notebook para apontar para o seu Google Drive ou faça upload direto do arquivo.
 
 ---
 
@@ -115,5 +106,5 @@ seaborn
 ## Tecnologias
 
 - Python 3.x
-- Jupyter Notebook / Google Colab
+- Jupyter Notebook
 - pandas, numpy, matplotlib, seaborn
