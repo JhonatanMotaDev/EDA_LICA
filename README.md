@@ -1,4 +1,4 @@
-# EDA_LICA
+# Análise Exploratória de Dados - LICA
 
 Análise Exploratória de Dados da **Carga de Energia Elétrica Diária** dos subsistemas brasileiros, utilizando dados públicos do **Operador Nacional do Sistema Elétrico (ONS)**.
 
